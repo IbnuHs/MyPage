@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #ffffff;
+}
+header {
+    color: #f6f7fb;
+    background-color: #2258c9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+}
+.logo {
+    border: 2px solid #f6f7fb;
+    box-sizing: border-box;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+nav ol{
+    display: flex;  
+    list-style: none;
+    gap: 40px;
+    transition: .3s;
+}
+.display {
+    transform: translateX(0);
+}
+nav ol li a {
+    color: #f6f7fb;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+nav ol li a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    background-color: #f6f7fb;
+    transition: .3s;
+}
+nav ol li a:hover::after{
+    width: 100%;
+}
+
+/* navButton For Mobile */
+.navButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+.navButton span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #f0f2fa;
+    border-radius: 5px;
+    transition: .3s;
+}
+.navButton input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.navButton input:checked ~ span:nth-child(2){
+    transform: translate(0,10px) rotate(45deg);
+}
+.navButton input:checked ~ span:nth-child(3){
+    transform:translateY(14px);
+}
+.navButton input:checked ~ span:nth-last-child(1){
+    transform: translate(0,-8px) rotate(-45deg);
+}
+/* main */
+body{
+    background-color: #fcfbfa;
+}
+.Product {
+    background-color: #f0f2fa;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.picture {
+    flex: .5;
+}
+.containerImage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+.jumbo {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jumbo img{
+    width: 600px;
+    object-fit: contain ;
+}
+
+
+/* text product */
+.textProduct {
+    flex: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.textProduct{
+    padding: 20px;
+    box-sizing: border-box;
+}
+.textProduct .container {
+    max-width: 500px;
+}
+.textProduct h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.textProduct p{
+    font-size: 1.3em;
+}
+.buyButton{
+    align-self: flex-start;
+    margin-top: 40px;
+    padding: 10px 20px;
+    cursor: pointer ;
+    background-color: #2258c9;
+    color: #f6f7fb;
+    border-radius: 10px;
+    border: 1px solid #f6f7fb;
+    transition: .2s;
+}
+.buyButton:hover {
+    transform: scale(1.05);
+}
+
+
+/* DEscription / section 2nd */
+.description {
+    position: relative;
+}
+.description h1 {
+    text-align: center;
+    padding-top: 60px;
+}
+.box {
+    min-height: 230px;
+    max-width: 900px;
+    background-color: #c0d2fa;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 50px auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.kotak {
+    height: 190px;
+    width: 500px;
+    background-color: #f0f2fa;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    flex-direction: column;
+}
+.kotak img {
+    width: 70px;
+}
+.kotak h3 {
+    margin: 10px;
+    text-align: center;
+}
+
+/* gallery product */
+.gallery {
+    background-color: #f0f2fa;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    
+}
+.picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mainPict {
+    margin: auto;
+    position: relative;
+}
+.mainPict img {
+    animation: show;
+    width: 900px;
+}
+.thumbnail {
+    margin: auto;
+    max-width: 900px;
+    max-height: 130px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+.thumb {
+    width: 100px;
+    border: 2px solid black;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+.thumb:hover{
+    opacity: 1;
+}
+
+.detail h1 {
+    text-align: center;
+}
+/* About */
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #f0f2fa;
+    height: 350px;
+    border-radius: 10px;
+}
+.about {
+    margin: 50px auto;
+    min-height: 100px;
+    display: flex;
+}
+.about h1{
+    text-align: center;
+    margin-top: 40px;
+}
+.about .text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.paragraph {
+    max-width: 650px;
+    padding: 50px;
+    /* height: 300px; */
+}
+
+/* aside */
+#AboutMe {
+    background-color: #f0f2fa;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.title{
+    
+}
+.title h1{
+    text-align: center;
+}
+.biocard {
+    /* padding: 50px; */
+    max-width: 430px;
+    margin: 30px auto;
+    border: 2px solid #2258c9;
+    padding: 50px;
+    border-radius: 20px ;
+}
+
+.head {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.head hr {
+    width: 100px;
+    height: 3px;
+    margin: auto;
+    background-color: #2258c9;
+    border: none;
+    border-radius: 2px;
+}
+
+.bio {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/* mypict */
+.myPict {
+    margin: auto;
+    text-align: center;
+    padding-right: 20px;
+    flex: .3;
+    border-right: 3px solid #07081a;
+}
+.myPict img {
+    width: 130px;
+    border-radius: 50%;
+    border:3px solid #2258c9 ;
+}
+
+.bx h4 {
+    margin-top: 15px;
+}
+
+/* about me */
+.aboutMe {
+    flex: .7;
+    padding-left: 40px;
+}
+.aboutMe h4{
+    padding-left: 10px;
+}
+.aboutMe h5{
+    padding-left: 10px;
+}
+.data {
+    border-left: 3px solid #6e7b8c;
+}
+
+
+/* footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: #2258c9;
+    color: #fcfcfc;
+    text-align: center;
+}
+
+/* responsive */
+@media screen and (max-width : 900px) {
+
+    .Product{
+        margin-top: 30px;
+        flex-direction: column;
+        height: 900px;
+    }
+    .textProduct .container{
+        padding: 30px;
+    }
+    .picture {
+        margin-top: 50px;
+    }
+    .mainPict img {
+        width: 500px;
+    }
+    .thumbnail {
+        width: 400px;
+    }
+    .box {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+    .kotak {
+        width: 300px;
+    }
+
+    .about .text{
+        flex-direction: column;
+    }
+    .paragraph {
+        padding: 20px;
+    }
+    .desc {
+        height: 400px;
+    }
+}
+@media screen and (max-width : 600px){
+    .jumbo img {
+        width: 450px;
+    }
+    .mainPict img {
+        width: 450px;
+    }
+    nav {
+        padding: 20px;
+    }
+    nav ol {
+        margin-top: 35px;
+        background-color: #2258c9;
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        left: 0;
+        right: 0;
+        height: 60vh;
+        transform: translateX(100%);
+        padding-bottom: 20px;
+
+    }
+    nav ol li a:after{
+        width: 100%;
+    }
+    /* nav mobile */
+    .navButton {
+        display: flex;
+    }
+    /* description */
+    .box {
+        border-radius: 0px;
+        padding: 50px 0px;
+    }
+    .kotak {
+        width: 220px;
+        
+    }
+    .kotak img{
+        width: 50px;
+    }
+    .kotak h3{
+        font-size: 1em;
+    }
+
+    /* biocard */
+    .biocard {
+        max-width: 300px;
+    }
+    .bio{
+        flex-direction: column;
+    }
+    .myPict {
+        padding-top: 0px;
+        border: none;
+    }
+}
+@media screen and (max-width : 450px){
+    .mainPict img{
+        width: 330px;
+    }  
+    .jumbo img {
+        width: 300px;
+    }
+    .thumbnail {
+        width: 200px;
+    }
+    .thumb {
+        width: 80px;
+    }
+    .desc {
+        padding-top: 30px;
+        padding-bottom: 90px ;
+    }
+    #aboutMe {
+        padding: 50px;
+    }
+    .biocard {
+        width: 230px;
+    }
+    
+}
+@media screen and (max-width : 330px){
+    .textProduct {
+        padding: 0;
+        padding-bottom: 20px;
+    }
+    .description  {
+        margin-top: 20px;
+    }
+    .jumbo img {
+        width: 250px;
+    }
+    .mainPict img {
+        width: 270px;
+    }
+    .desc {
+        height: 87vh;
+    }
+    .biocard {
+        width: 160px;
+    }
+}
+
